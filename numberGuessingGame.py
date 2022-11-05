@@ -40,7 +40,7 @@ def start_game():
     """)
     
     #generate random number and store the answer
-    #answer = random.randrange(20)
+    answer = random.randrange(20)
     #print(answer)
 
     # #continuously prompt player for guess until they guess correctly
