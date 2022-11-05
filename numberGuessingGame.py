@@ -64,7 +64,7 @@ if prompt.lower() == 'y' or prompt.lower() == 'yes':
                 print("""
                         IMPOSTER!!!!  
                         IT CANNOT BE!!! 
-                        HOW HAST THOU DIVINED THE MASTER CRYPT KEY???!!! 
+                        HOW HAST THEE DIVINED THE MASTER CRYPT KEY???!!! 
                     
                         NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
                            OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
