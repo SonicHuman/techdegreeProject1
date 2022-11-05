@@ -53,9 +53,9 @@ if prompt.lower() == 'y' or prompt.lower() == 'yes':
         try:
             if count == 5:
                 print("\nLAST CHANCE, KNAVE..")
-            guess = int(input("\nHARK KNAVE!!! WHAT NUMBER HAVE I CONJURED IN THE CAULDRON??!!  "))
+            guess = int(input("\nHARK!!! WHAT NUMBER HAVE I CONJURED IN THE CAULDRON??!!  "))
         except ValueError:
-            print(f"\nATTEMPTS {count} \nBLASPHEMY!!  THOU SHALT CHOOSE THE SHAPE OF A NUMBER, KNAVE..")
+            print(f"\nTRIES {count} \nBLASPHEMY!!  THOU SHALT CHOOSE THE SHAPE OF A NUMBER, KNAVE..")
             continue    
         #handle guesses out of range
         if guess > 20 or guess < 1:
@@ -86,7 +86,7 @@ if prompt.lower() == 'y' or prompt.lower() == 'yes':
                         AHAHAHAHAHAHAAAAA AHAHAHAHAHAHAAAAAAAA AHAHAHAHAHAAAAAAAAAAAAAAAAAAAAAAA!!!!!!!!!!!!!!
                           """)
                 break
-            print(f"\nATTEMPTS {count} \nFIEND!!!  THOU SHALT CHOOSE BUT ONE OF THE CRYPT NUMBERS, KNAVE..")
+            print(f"\nTRIES {count} \nFIEND!!!  THOU SHALT CHOOSE BUT ONE OF THE CRYPT NUMBERS, KNAVE..")
             continue
                 
         #keep count of their legit guess
