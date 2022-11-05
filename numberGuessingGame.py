@@ -4,21 +4,22 @@ def start_game():
     print("""
                      (
                     ( )
-                   (   )    
-         \                      /
-          |                    |
-          |THE CAULDRON OF DOOM|
-          |_                 __|
-            |           __  |
-            | _   ___  |  | |
-             U | |   | |  | |
-               | |    U   | | 
-               | |        | |
-               | |         U 
-               | |
-               | |
-                U
-    
+                   (   )
+         _________________________              
+         \     |           |     /
+          | THE CAULDRON OF DOOM |
+          |    |           |     |
+          |    |           |     |
+          \____| |       | |____/
+               |_|       |_|
+                 | |   | |  
+                 |_|| ||_|
+                    | |
+                    |_|
+
+
+
+
     PREDICT THE DIVINE NUMBER IN THE CAULDRON AND ASCEND.........
     
     ELSE..
