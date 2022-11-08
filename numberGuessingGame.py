@@ -38,13 +38,13 @@ def start_game():
 
 
     """)
+    play_game()
 
-start_game()
-prompt = input("SHALL WE BEGIN, THEN?   ")
-if prompt.lower() == 'y' or prompt.lower() == 'yes':
+def play_game():
     #generate random number and store the answer
     answer = random.randrange(20)
     #print(answer)
+    #assign randomly high number
     guess = 0
     count = 0
     #continuously prompt player for a guess until they guess correctly
@@ -100,7 +100,7 @@ if prompt.lower() == 'y' or prompt.lower() == 'yes':
 
             AHAHAHAHAHAHAHAHAHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!!!!!!!!!!!!!!!
             """)
-            exit()
+            play_again()
 
         #check their legit guess with the answer
         if guess > answer:
@@ -109,12 +109,25 @@ if prompt.lower() == 'y' or prompt.lower() == 'yes':
         elif guess < answer:
             print(f"\nTRIES {count} \nTHY NUMBER IS TOO SMALL...\n")
             continue
-else:
-    exit()
+
+    print(f"""
+        \n\n\nYESSSSSSS KNAVE, {guess} IS THE CONJURED NUMBER...AFTER {count} ATTEMPTS, THOU MAY ASCEND!  OR..
+        """)
+    play_again()
+
+def play_again():
+    prompt = input("\nDOST THOU WISH TO PLAY THE CAULDRON OF DOOM WITH THE CRYPT KEEPER AGAIN?  ")
+    if prompt.lower() == 'y' or prompt.lower() == 'yes':
+        play_game()
+    else:
+        print("""
+                \n\n\nVERY WELL...
+                 
+                ...THE CRYPT KEEPER AWAITS YOUR INEVITABLE RETURN, MUAHAHAHAHAHA!
+            """)
+        exit()
+
+start_game()
 
 
-print(f"""
-        \n\n\nYESSSSSSS KNAVE, {guess} IS THE CONJURED NUMBER....AFTER {count} ATTEMPTS, THOU MAY ASCEND..
-      
-        BE GONE WITH YE!
-      """)
+
