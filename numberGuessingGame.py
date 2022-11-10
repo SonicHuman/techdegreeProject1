@@ -133,7 +133,7 @@ def play_again(highscore):
         print("""
                 \n\n\nVERY WELL...
                  
-                ...THE CRYPT KEEPER AWAITS YOUR INEVITABLE RETURN, MUAHAHAHAHAHA!
+                ...THE CRYPT KEEPER AWAITS THINE INEVITABLE RETURN, MUAHAHAHAHAHA!
             """)
         printRecord(highscore)
         exit()
