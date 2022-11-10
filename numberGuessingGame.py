@@ -21,9 +21,9 @@ def start_game():
                  |
 
     THOU HAST ENTERED A FORSAKEN PORTAL..
-    OF GAMES, MISERY, AND LIFE IMMORTAL.
+    OF RIDDLES, FATE, AND CRUEL IMMORTALS.
     THINE CUNNING AND WIT CAN GUIDE THEE OUT..
-    OR LEAD YE TO MADNESS AND DOUBT.
+    OR LEAD YE TO MADNESS AND DOUBT!
 
     NUMBERED 1 TO 20, THE CRYPTS PORTEND.. 
     DIVINE THE SACRED NUMBER IN THE CAULDRON AND ASCEND!
@@ -31,29 +31,34 @@ def start_game():
     DIVINE IT NOT, AND THOU MUST TRY AGAIN..
     THIS RIDDLE AND THY WIT ARE THINE ONLY FRIENDS!  
 
-    IF YE FAIL 6 TIMES, THOU HAST SEALED THINE OWN FATE..
-    AND 666 YEARS OF SOLITUDE IN THE CRYPT AWAIT!
+    IF YE FAIL UPON THY 6th TRY, THOU HAST SEALED THINE OWN FATE..
+    666 LASHINGS IN A CRYPT AWAIT!
     
     AAAAAAAAAHAHAHAAAAA!!!!
 
 
     """)
-    play_game()
+    highscore = 6
+    play_game(highscore)
+    
 
-def play_game():
+#play a number guessing game
+def play_game(highscore):
     #generate random number and store the answer
     answer = random.randrange(20)
+    #use this for testing and troubleshooting
     #print(answer)
     #assign randomly high number
     guess = 0
     count = 0
+    printRecord(highscore)
     #continuously prompt player for a guess until they guess correctly
     while guess!=answer and count < 6:
     #handle non-numeric input
         try:
             if count == 5:
                 print("\nLAST CHANCE, KNAVE..")
-            guess = int(input("\nHARK!!! WHAT NUMBER HAVE I CONJURED IN THE CAULDRON??!!  "))
+            guess = int(input("\n\nHARK! WHAT NUMBER HAVE I CONJURED IN THE CAULDRON??!!  "))
         except ValueError:
             print(f"\nTRIES {count} \nBLASPHEMY!!  THOU SHALT CHOOSE THE SHAPE OF A NUMBER, KNAVE..")
             continue    
@@ -96,11 +101,11 @@ def play_game():
         if count > 5 and guess!=answer:
             print(f"""
             \n\n\nDOOMED ARE YE!!!!!!!!!  YOU HAVE ERRED AND STRAYED {count} TIMES...
-            YE SHALL MAKE THINE OWN BED NOW IN CRYPT NUMBER {guess} FOR THE NEXT 666 YEARS!
+            YE SHALL RECEIVE THINE LASHINGS IN CRYPT NUMBER {guess}!
 
             AHAHAHAHAHAHAHAHAHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!!!!!!!!!!!!!!!
             """)
-            play_again()
+            play_again(highscore)
 
         #check their legit guess with the answer
         if guess > answer:
@@ -109,23 +114,33 @@ def play_game():
         elif guess < answer:
             print(f"\nTRIES {count} \nTHY NUMBER IS TOO SMALL...\n")
             continue
+    
+    #update best score record
+    if count < highscore:
+        highscore = count
 
     print(f"""
-        \n\n\nYESSSSSSS KNAVE, {guess} IS THE CONJURED NUMBER...AFTER {count} ATTEMPTS, THOU MAY ASCEND!  OR..
-        """)
-    play_again()
+        \n\nYESSSSSSS...THE NUMBER IN THE CAULDRON IS {guess}!!!  THY GUESS COUNT IS {count}, YE MAY NOW ASCEND!  OR..
+    """)
+    play_again(highscore)
 
-def play_again():
+#give user option to play again
+def play_again(highscore):
     prompt = input("\nDOST THOU WISH TO PLAY THE CAULDRON OF DOOM WITH THE CRYPT KEEPER AGAIN?  ")
     if prompt.lower() == 'y' or prompt.lower() == 'yes':
-        play_game()
+        play_game(highscore)
     else:
+        printRecord(highscore)
         print("""
                 \n\n\nVERY WELL...
                  
                 ...THE CRYPT KEEPER AWAITS YOUR INEVITABLE RETURN, MUAHAHAHAHAHA!
             """)
         exit()
+
+#display record score so far
+def printRecord(highscore):
+    print("\n\nGUESS RECORD TO SURPASS: ",highscore)
 
 start_game()
 
