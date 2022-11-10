@@ -47,7 +47,7 @@ def play_game(highscore):
     #generate random number and store the answer
     answer = random.randrange(20)
     #use this for testing and troubleshooting
-    print(answer)
+    #print(answer)
     #assign randomly high number
     guess = 0
     count = 0
