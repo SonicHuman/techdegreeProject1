@@ -47,7 +47,7 @@ def play_game(highscore):
     #generate random number and store the answer
     answer = random.randrange(20)
     #use this for testing and troubleshooting
-    #print(answer)
+    print(answer)
     #assign randomly high number
     guess = 0
     count = 0
@@ -120,7 +120,7 @@ def play_game(highscore):
         highscore = count
 
     print(f"""
-        \n\nYESSSSSSS...THE NUMBER IN THE CAULDRON IS {guess}!!!  THY GUESS COUNT IS {count}, YE MAY NOW ASCEND!  OR..
+        \n\nYESSSSSSS...THE NUMBER IN THE CAULDRON IS {guess}!!!  THY GUESSES NUMBERED {count}, YE MAY ASCEND OUT OF THE PORTAL..  OR..
     """)
     play_again(highscore)
 
@@ -130,17 +130,17 @@ def play_again(highscore):
     if prompt.lower() == 'y' or prompt.lower() == 'yes':
         play_game(highscore)
     else:
-        printRecord(highscore)
         print("""
                 \n\n\nVERY WELL...
                  
                 ...THE CRYPT KEEPER AWAITS YOUR INEVITABLE RETURN, MUAHAHAHAHAHA!
             """)
+        printRecord(highscore)
         exit()
 
 #display record score so far
 def printRecord(highscore):
-    print("\n\nGUESS RECORD TO SURPASS: ",highscore)
+    print("\n\nGUESS RECORD: ",highscore,"\n")
 
 start_game()
 
